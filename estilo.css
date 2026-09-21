@@ -1,0 +1,82 @@
+/* RESET BÁSICO: Limpa as margens padrão dos navegadores para evitar diferenças indesejadas */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Garante que margens e preenchimentos não alterem a largura total dos elementos */
+}
+
+/* Configurações globais do corpo da página */
+body {
+    font-family: Arial, sans-serif; /* Define uma fonte simples e de fácil leitura */
+    background-color: #f4f6f8;      /* Cor de fundo suave para não cansar a vista */
+    color: #333333;                 /* Cor do texto em cinza-escuro para dar bom contraste */
+    padding: 20px;
+}
+
+/* SEÇÃO PRINCIPAL */
+.secao-destaques {
+    max-width: 1100px; /* Limita a largura máxima da seção na tela */
+    margin: 0 auto;    /* Centraliza a seção horizontalmente na página */
+    padding: 20px;
+}
+
+/* TÍTULO DA SEÇÃO */
+.titulo-secao {
+    text-align: center;      /* Centraliza o texto do título */
+    margin-bottom: 30px;     /* Cria um espaço abaixo do título */
+    color: #1b365d;          /* Azul escuro para dar destaque e autoridade */
+}
+
+/* FLEXBOX CONTAINER: Agrupa e organiza os 3 cards lado a lado */
+.container-cards {
+    display: flex;             /* Ativa o módulo Flexbox nesta div */
+    flex-direction: row;       /* Coloca os itens (cards) lado a lado em linha */
+    justify-content: center;   /* Centraliza os cards no espaço disponível */
+    gap: 20px;                 /* Cria um espaçamento uniforme de 20px entre cada card */
+    flex-wrap: wrap;           /* Permite que os cards vão para a linha de baixo se a tela for pequena (celular) */
+}
+
+/* ESTILO INDIVIDUAL DE CADA CARD */
+.card {
+    background-color: #ffffff; /* Fundo branco para destacar do fundo da página */
+    border-radius: 8px;        /* Arredonda as bordas do card */
+    padding: 20px;             /* Espaço interno entre o texto e a borda do card */
+    flex: 1;                   /* Faz com que todos os 3 cards cresçam e ocupem o mesmo tamanho */
+    min-width: 280px;          /* Define um tamanho mínimo para não esmagar o card em telas menores */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave para dar sensação de elevação */
+    display: flex;             /* Ativa o Flexbox dentro do próprio card para alinhar itens em coluna */
+    flex-direction: column;    /* Organiza o conteúdo do card (etiqueta, título, texto) de cima para baixo */
+}
+
+.card h3 {
+    font-size: 1.1rem;
+    margin: 15px 0 10px 0;
+    color: #222222;
+}
+
+.card p {
+    font-size: 0.95rem;
+    line-height: 1.5; /* Aumenta o espaçamento entre as linhas do texto para facilitar a leitura */
+    color: #555555;
+}
+
+/* ETIQUETAS DE STATUS (MITO / VERDADE) */
+.status {
+    align-self: flex-start; /* Alinha a etiqueta no início (esquerda) dentro do card */
+    font-weight: bold;      /* Deixa o texto em negrito */
+    font-size: 0.8rem;
+    padding: 4px 8px;       /* Espaçamento interno da etiqueta */
+    border-radius: 4px;     /* Bordas levemente arredondadas na etiqueta */
+}
+
+/* Cor específica para a etiqueta MITO */
+.status.mito {
+    background-color: #ffebee; /* Fundo vermelho bem claro */
+    color: #c62828;            /* Texto vermelho escuro */
+}
+
+/* Cor específica para a etiqueta VERDADE */
+.status.verdade {
+    background-color: #e8f5e9; /* Fundo verde bem claro */
+    color: #2e7d32;            /* Texto verde escuro */
+}
