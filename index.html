@@ -1,51 +1,67 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <!-- Define a codificação de caracteres para aceitar acentos e ç -->
     <meta charset="UTF-8">
-    <!-- Ajusta a visualização para se adaptar bem a telas de celulares e computadores -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Verificação de Fatos - Mitos e Verdades sobre o Brasil</title>
-    <!-- Conecta este arquivo HTML ao arquivo de estilos CSS externo -->
+    <title>Checagem de Fatos - Brasil e Estado de São Paulo</title>
     <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
 
-    <!-- A tag <section> indica uma seção temática na página -->
     <section class="secao-destaques">
-        
-        <!-- O <h2> é o título principal da nossa seção de destaques -->
-        <h2 class="titulo-secao">Verificação de Fatos: Mitos e Verdades sobre o Brasil</h2>
+        <h2 class="titulo-secao">Verificação de Fatos: Brasil & Estado de São Paulo</h2>
 
-        <!-- Esta <div> com a classe 'container-cards' agrupa os 3 cards e será o nosso Flex Container no CSS -->
+        <!-- Container do Flexbox -->
         <div class="container-cards">
 
-            <!-- <article> representa um conteúdo autônomo e independente (cada item de destaque) -->
+            <!-- CARD 1: Fato Geral do Brasil -->
             <article class="card">
-                <!-- <span> usada para aplicar um estilo diferente na tag de status -->
-                <span class="status mito">MITO</span>
-                <h3>O Brasil é um país sem desastres naturais.</h3>
-                <!-- <p> para o parágrafo explicativo da checagem -->
-                <p><strong>Fato:</strong> Embora o Brasil esteja localizado no centro de uma placa tectônica (o que evita terremotos gigantes e vulcões), o país sofre frequentemente com desastres naturais como secas extremas, inundações e deslizamentos de terra.</p>
+                <h3>O Brasil é um país completamente imune a desastres naturais.</h3>
+                <button class="btn-verificar">Verificar Fato</button>
+
+                <div class="explicacao escondido">
+                    <span class="status mito">MITO</span>
+                    <p><strong>Fato:</strong> Embora o país esteja no centro de uma placa tectônica (o que evita grandes terremotos), sofremos com inundações, secas severas e deslizamentos de terra frequentemente.</p>
+                </div>
             </article>
 
-            <!-- Segundo item de destaque -->
+            <!-- CARD 2: Fato do Estado de SP (Geografia/Meio Ambiente) -->
             <article class="card">
-                <span class="status verdade">VERDADE</span>
-                <h3>O Brasil possui a maior biodiversidade de plantas do planeta.</h3>
-                <p><strong>Fato:</strong> O Brasil abriga cerca de 15% a 20% de toda a biodiversidade mundial, liderando o ranking de número de espécies de plantas e de água doce conhecidas no mundo.</p>
+                <h3>O Rio Tietê é totalmente poluído em toda a sua extensão no estado de SP.</h3>
+                <button class="btn-verificar">Verificar Fato</button>
+
+                <div class="explicacao escondido">
+                    <span class="status mito">MITO</span>
+                    <p><strong>Fato:</strong> O rio nasce limpo na Serra do Mar (Salesópolis) e volta a ter vida em trechos do interior. A degradação ocorre principalmente na Região Metropolitana da Capital devido ao esgoto e resíduos industriais.</p>
+                </div>
             </article>
 
-            <!-- Terceiro item de destaque -->
+            <!-- CARD 3: Fato do Estado de SP (História/Economia) -->
             <article class="card">
-                <span class="status mito">MITO</span>
-                <h3>A Floresta Amazônica é o principal "pulmão do mundo".</h3>
-                <p><strong>Fato:</strong> A maior parte do oxigênio do planeta é produzida pelas algas marinhas. A Amazônia produz muito oxigênio, mas consome quase tudo o que produz. Contudo, ela é fundamental para a regulação do clima global.</p>
+                <h3>A produção de café foi a principal impulsionadora da industrialização paulista.</h3>
+                <button class="btn-verificar">Verificar Fato</button>
+
+                <div class="explicacao escondido">
+                    <span class="status verdade">VERDADE</span>
+                    <p><strong>Fato:</strong> O acúmulo de capital do café, a expansão das ferrovias e a vinda da mão de obra imigrante no século XIX e início do XX criaram a infraestrutura base para o surgimento das indústrias em SP.</p>
+                </div>
             </article>
 
-        </div> <!-- Fim da container-cards -->
+            <!-- CARD 4: Fato Geral do Brasil (Biodiversidade) -->
+            <article class="card">
+                <h3>O Brasil abriga a maior biodiversidade de plantas do planeta.</h3>
+                <button class="btn-verificar">Verificar Fato</button>
 
-    </section> <!-- Fim da secao-destaques -->
+                <div class="explicacao escondido">
+                    <span class="status verdade">VERDADE</span>
+                    <p><strong>Fato:</strong> O país detém cerca de 15% a 20% de toda a biodiversidade do planeta, liderando o ranking mundial de flora e fauna aquática de água doce.</p>
+                </div>
+            </article>
 
+        </div> <!-- Fim do container-cards -->
+    </section>
+
+    <!-- Script carregado ao final da página para garantir a manipulação da árvore DOM -->
+    <script src="script.js"></script>
 </body>
 </html>
