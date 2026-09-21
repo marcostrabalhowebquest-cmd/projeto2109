@@ -1,82 +1,110 @@
-/* RESET BÁSICO: Limpa as margens padrão dos navegadores para evitar diferenças indesejadas */
+/* RESET BÁSICO: Padroniza espaçamentos dos navegadores */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /* Garante que margens e preenchimentos não alterem a largura total dos elementos */
+    box-sizing: border-box;
 }
 
-/* Configurações globais do corpo da página */
 body {
-    font-family: Arial, sans-serif; /* Define uma fonte simples e de fácil leitura */
-    background-color: #f4f6f8;      /* Cor de fundo suave para não cansar a vista */
-    color: #333333;                 /* Cor do texto em cinza-escuro para dar bom contraste */
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f8;
+    color: #333333;
     padding: 20px;
 }
 
-/* SEÇÃO PRINCIPAL */
 .secao-destaques {
-    max-width: 1100px; /* Limita a largura máxima da seção na tela */
-    margin: 0 auto;    /* Centraliza a seção horizontalmente na página */
+    max-width: 1100px;
+    margin: 0 auto;
     padding: 20px;
 }
 
-/* TÍTULO DA SEÇÃO */
 .titulo-secao {
-    text-align: center;      /* Centraliza o texto do título */
-    margin-bottom: 30px;     /* Cria um espaço abaixo do título */
-    color: #1b365d;          /* Azul escuro para dar destaque e autoridade */
+    text-align: center;
+    margin-bottom: 30px;
+    color: #1b365d;
 }
 
-/* FLEXBOX CONTAINER: Agrupa e organiza os 3 cards lado a lado */
+/* CONTAINER FLEXBOX: Organização responsiva */
 .container-cards {
-    display: flex;             /* Ativa o módulo Flexbox nesta div */
-    flex-direction: row;       /* Coloca os itens (cards) lado a lado em linha */
-    justify-content: center;   /* Centraliza os cards no espaço disponível */
-    gap: 20px;                 /* Cria um espaçamento uniforme de 20px entre cada card */
-    flex-wrap: wrap;           /* Permite que os cards vão para a linha de baixo se a tela for pequena (celular) */
+    display: flex;
+    flex-direction: row;      /* Organiza os cards lado a lado */
+    flex-wrap: wrap;          /* Permite quebra de linha em telas menores */
+    justify-content: center;  /* Centraliza a distribuição do espaço */
+    gap: 20px;                /* Espaçamento uniforme entre cada elemento */
 }
 
-/* ESTILO INDIVIDUAL DE CADA CARD */
+/* ESTILO DO CARD INDIVIDUAL */
 .card {
-    background-color: #ffffff; /* Fundo branco para destacar do fundo da página */
-    border-radius: 8px;        /* Arredonda as bordas do card */
-    padding: 20px;             /* Espaço interno entre o texto e a borda do card */
-    flex: 1;                   /* Faz com que todos os 3 cards cresçam e ocupem o mesmo tamanho */
-    min-width: 280px;          /* Define um tamanho mínimo para não esmagar o card em telas menores */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave para dar sensação de elevação */
-    display: flex;             /* Ativa o Flexbox dentro do próprio card para alinhar itens em coluna */
-    flex-direction: column;    /* Organiza o conteúdo do card (etiqueta, título, texto) de cima para baixo */
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    
+    /* Flexbox interno: garante o alinhamento da coluna dentro do próprio card */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+    /* Regra do Flexbox para os filhos: crescer (1), encolher (1), base mínima de 250px */
+    flex: 1 1 250px; 
 }
 
 .card h3 {
-    font-size: 1.1rem;
-    margin: 15px 0 10px 0;
+    font-size: 1rem;
     color: #222222;
+    margin-bottom: 15px;
 }
 
-.card p {
-    font-size: 0.95rem;
-    line-height: 1.5; /* Aumenta o espaçamento entre as linhas do texto para facilitar a leitura */
-    color: #555555;
-}
-
-/* ETIQUETAS DE STATUS (MITO / VERDADE) */
+/* ETIQUETAS DE STATUS */
 .status {
-    align-self: flex-start; /* Alinha a etiqueta no início (esquerda) dentro do card */
-    font-weight: bold;      /* Deixa o texto em negrito */
+    display: inline-block;
+    font-weight: bold;
     font-size: 0.8rem;
-    padding: 4px 8px;       /* Espaçamento interno da etiqueta */
-    border-radius: 4px;     /* Bordas levemente arredondadas na etiqueta */
+    padding: 4px 8px;
+    border-radius: 4px;
+    margin-bottom: 10px;
 }
 
-/* Cor específica para a etiqueta MITO */
 .status.mito {
-    background-color: #ffebee; /* Fundo vermelho bem claro */
-    color: #c62828;            /* Texto vermelho escuro */
+    background-color: #ffebee;
+    color: #c62828;
 }
 
-/* Cor específica para a etiqueta VERDADE */
 .status.verdade {
-    background-color: #e8f5e9; /* Fundo verde bem claro */
-    color: #2e7d32;            /* Texto verde escuro */
+    background-color: #e8f5e9;
+    color: #2e7d32;
+}
+
+/* BOTÃO DE INTERAÇÃO */
+.btn-verificar {
+    background-color: #1b365d;
+    color: #ffffff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: background-color 0.2s;
+}
+
+.btn-verificar:hover {
+    background-color: #2b5288;
+}
+
+/* REGRAS DE INTERATIVIDADE (JS) */
+.escondido {
+    display: none; /* Esconde a resposta até a ação do clique */
+}
+
+.explicacao {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #eeeeee;
+}
+
+.explicacao p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    color: #555555;
 }
